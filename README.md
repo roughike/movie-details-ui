@@ -1,8 +1,11 @@
-# movie_details_ui
+# What is it?
 
-A new Flutter project.
+Sample project for creating a beautiful movie details UI in Flutter.
 
-## Getting Started
+Read the blogpost [here](https://flutter.rocks/2017/09/12/from-wireframes-to-flutter-movie-details-page/).
 
-For help getting started with Flutter, view our online
-[documentation](http://flutter.io/).
+All the related source code is located in the [/lib](https://github.com/FlutterRocks/movie-details-ui/tree/master/lib) folder.
+
+The end result looks a little something like this:
+
+![The end result](https://github.com/FlutterRocks/movie-details-ui/raw/master/movie_details_ui_result-1.png)
