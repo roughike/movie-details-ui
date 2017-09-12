@@ -1,0 +1,25 @@
+name: movie_details_ui
+description: A new Flutter project.
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+  assets:
+    - images/banner.png
+    - images/poster.png
+    - images/1.png
+    - images/2.png
+    - images/3.png
+    - images/4.png
+    - images/ellie.png
+    - images/eric.png
+    - images/jenny.png
+    - images/kevin.png
+    - images/louis.png
