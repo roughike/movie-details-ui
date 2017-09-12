@@ -48,7 +48,10 @@ class MovieDetailHeader extends StatelessWidget {
 
     return new Stack(
       children: [
-        new ArcBannerImage(movie.bannerUrl),
+        new Padding(
+          padding: const EdgeInsets.only(bottom: 140.0),
+          child: new ArcBannerImage(movie.bannerUrl),
+        ),
         new Positioned(
           bottom: 0.0,
           left: 16.0,
