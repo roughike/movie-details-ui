@@ -7,28 +7,23 @@ import 'package:movie_details_ui/story_line.dart';
 
 class MovieDetailsPage extends StatelessWidget {
   MovieDetailsPage(this.movie);
-
   final Movie movie;
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      body: new SingleChildScrollView(
-        child: new Column(
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: Column(
           children: [
-            new MovieDetailHeader(movie),
-            new Padding(
+            MovieDetailHeader(movie),
+            Padding(
               padding: const EdgeInsets.all(20.0),
-              child: new Storyline(movie.storyline),
+              child: Storyline(movie.storyline),
             ),
-            new PhotoScroller(movie.photoUrls),
-            new Padding(
-              padding: const EdgeInsets.only(
-                top: 20.0,
-                bottom: 50.0,
-              ),
-              child: new ActorScroller(movie.actors),
-            ),
+            PhotoScroller(movie.photoUrls),
+            SizedBox(height: 20.0),
+            ActorScroller(movie.actors),
+            SizedBox(height: 50.0),
           ],
         ),
       ),

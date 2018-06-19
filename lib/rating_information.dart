@@ -3,15 +3,14 @@ import 'package:movie_details_ui/models.dart';
 
 class RatingInformation extends StatelessWidget {
   RatingInformation(this.movie);
-
   final Movie movie;
 
-  _buildRatingBar(ThemeData theme) {
+  Widget _buildRatingBar(ThemeData theme) {
     var stars = <Widget>[];
 
     for (var i = 1; i <= 5; i++) {
       var color = i <= movie.starRating ? theme.accentColor : Colors.black12;
-      var star = new Icon(
+      var star = Icon(
         Icons.star,
         color: color,
       );
@@ -19,7 +18,7 @@ class RatingInformation extends StatelessWidget {
       stars.add(star);
     }
 
-    return new Row(children: stars);
+    return Row(children: stars);
   }
 
   @override
@@ -28,35 +27,33 @@ class RatingInformation extends StatelessWidget {
     var textTheme = theme.textTheme;
     var ratingCaptionStyle = textTheme.caption.copyWith(color: Colors.black45);
 
-    var numericRating = new Column(
+    var numericRating = Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        new Text(
+        Text(
           movie.rating.toString(),
           style: textTheme.title.copyWith(
             fontWeight: FontWeight.w400,
             color: theme.accentColor,
           ),
         ),
-        new Padding(
-          padding: const EdgeInsets.only(top: 4.0),
-          child: new Text(
-            'Ratings',
-            style: ratingCaptionStyle,
-          ),
+        SizedBox(height: 4.0),
+        Text(
+          'Ratings',
+          style: ratingCaptionStyle,
         ),
       ],
     );
 
-    var starRating = new Column(
+    var starRating = Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         _buildRatingBar(theme),
-        new Padding(
+        Padding(
           padding: const EdgeInsets.only(top: 4.0, left: 4.0),
-          child: new Text(
+          child: Text(
             'Grade now',
             style: ratingCaptionStyle,
           ),
@@ -64,14 +61,12 @@ class RatingInformation extends StatelessWidget {
       ],
     );
 
-    return new Row(
+    return Row(
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
         numericRating,
-        new Padding(
-          padding: const EdgeInsets.only(left: 16.0),
-          child: starRating,
-        ),
+        SizedBox(width: 16.0),
+        starRating,
       ],
     );
   }

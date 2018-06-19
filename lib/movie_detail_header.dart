@@ -6,15 +6,14 @@ import 'package:movie_details_ui/rating_information.dart';
 
 class MovieDetailHeader extends StatelessWidget {
   MovieDetailHeader(this.movie);
-
   final Movie movie;
 
-  _buildCategoryChips(TextTheme textTheme) {
+  List<Widget> _buildCategoryChips(TextTheme textTheme) {
     return movie.categories.map((category) {
-      return new Padding(
+      return Padding(
         padding: const EdgeInsets.only(right: 8.0),
-        child: new Chip(
-          label: new Text(category),
+        child: Chip(
+          label: Text(category),
           labelStyle: textTheme.caption,
           backgroundColor: Colors.black12,
         ),
@@ -26,50 +25,40 @@ class MovieDetailHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     var textTheme = Theme.of(context).textTheme;
 
-    var movieInformation = new Column(
+    var movieInformation = Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        new Text(
+        Text(
           movie.title,
           style: textTheme.title,
         ),
-        new Padding(
-          padding: const EdgeInsets.only(top: 8.0),
-          child: new RatingInformation(movie),
-        ),
-        new Padding(
-          padding: const EdgeInsets.only(top: 12.0),
-          child: new Row(
-            children: _buildCategoryChips(textTheme),
-          ),
-        ),
+        SizedBox(height: 8.0),
+        RatingInformation(movie),
+        SizedBox(height: 12.0),
+        Row(children: _buildCategoryChips(textTheme)),
       ],
     );
 
-    return new Stack(
+    return Stack(
       children: [
-        new Padding(
+        Padding(
           padding: const EdgeInsets.only(bottom: 140.0),
-          child: new ArcBannerImage(movie.bannerUrl),
+          child: ArcBannerImage(movie.bannerUrl),
         ),
-        new Positioned(
+        Positioned(
           bottom: 0.0,
           left: 16.0,
           right: 16.0,
-          child: new Row(
+          child: Row(
             crossAxisAlignment: CrossAxisAlignment.end,
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              new Poster(
+              Poster(
                 movie.posterUrl,
                 height: 180.0,
               ),
-              new Expanded(
-                child: new Padding(
-                  padding: const EdgeInsets.only(left: 16.0),
-                  child: movieInformation,
-                ),
-              ),
+              SizedBox(width: 16.0),
+              Expanded(child: movieInformation),
             ],
           ),
         ),

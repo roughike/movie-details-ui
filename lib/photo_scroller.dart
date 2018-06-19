@@ -1,19 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:movie_details_ui/models.dart';
 
 class PhotoScroller extends StatelessWidget {
   PhotoScroller(this.photoUrls);
-
   final List<String> photoUrls;
 
-  _buildPhoto(BuildContext context, int index) {
+  Widget _buildPhoto(BuildContext context, int index) {
     var photo = photoUrls[index];
 
-    return new Padding(
+    return Padding(
       padding: const EdgeInsets.only(right: 16.0),
-      child: new ClipRRect(
-        borderRadius: new BorderRadius.circular(4.0),
-        child: new Image.asset(
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(4.0),
+        child: Image.asset(
           photo,
           width: 160.0,
           height: 120.0,
@@ -27,19 +25,19 @@ class PhotoScroller extends StatelessWidget {
   Widget build(BuildContext context) {
     var textTheme = Theme.of(context).textTheme;
 
-    return new Column(
+    return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        new Padding(
+        Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20.0),
-          child: new Text(
+          child: Text(
             'Photos',
             style: textTheme.subhead.copyWith(fontSize: 18.0),
           ),
         ),
-        new SizedBox.fromSize(
+        SizedBox.fromSize(
           size: const Size.fromHeight(100.0),
-          child: new ListView.builder(
+          child: ListView.builder(
             itemCount: photoUrls.length,
             scrollDirection: Axis.horizontal,
             padding: const EdgeInsets.only(top: 8.0, left: 20.0),

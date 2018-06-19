@@ -1,6 +1,6 @@
 import 'package:movie_details_ui/models.dart';
 
-final Movie testMovie = new Movie(
+final Movie testMovie = Movie(
   bannerUrl: 'images/banner.png',
   posterUrl: 'images/poster.png',
   title: 'The Secret Life of Pets',
@@ -18,23 +18,23 @@ final Movie testMovie = new Movie(
     'images/4.png',
   ],
   actors: [
-    new Actor(
+    Actor(
       name: 'Louis C.K.',
       avatarUrl: 'images/louis.png',
     ),
-    new Actor(
+    Actor(
       name: 'Eric Stonestreet',
       avatarUrl: 'images/eric.png',
     ),
-    new Actor(
+    Actor(
       name: 'Kevin Hart',
       avatarUrl: 'images/kevin.png',
     ),
-    new Actor(
+    Actor(
       name: 'Jenny Slate',
       avatarUrl: 'images/jenny.png',
     ),
-    new Actor(
+    Actor(
       name: 'Ellie Kemper',
       avatarUrl: 'images/ellie.png',
     ),

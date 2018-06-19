@@ -15,10 +15,10 @@ class Poster extends StatelessWidget {
   Widget build(BuildContext context) {
     var width = POSTER_RATIO * height;
 
-    return new Material(
-      borderRadius: new BorderRadius.circular(4.0),
+    return Material(
+      borderRadius: BorderRadius.circular(4.0),
       elevation: 2.0,
-      child: new Image.asset(
+      child: Image.asset(
         posterUrl,
         fit: BoxFit.cover,
         width: width,
